@@ -31,8 +31,10 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(s)
   }
-  data <- x$get()
-  s <- solve(data, ...)
-  x$setsolver(s)
+  data <- x$get() #gets matrix via get
+  s <- solve(data, ...) #solves if no s
+  x$setsolver(s) #sets solutons s via set solver
   s
 }
+
+
